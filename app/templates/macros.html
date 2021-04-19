@@ -15,8 +15,8 @@
 {% endmacro %}
 
 <!-- Displaying Sources macro -->
-{% macro displaySources(news_list) %}
-    {% for news in news_list %}
-    <button> <a href="/search/{{news.source_url_short}}">{{news.source_name.name}}</a> </button>
+{% macro displaySources(source_list) %}
+    {% for source in source_list %}
+    <button> <a href="/search/{{source.source_url_short}}">{{source.name}}</a> </button>
     {% endfor %}
 {% endmacro %}

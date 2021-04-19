@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for
 from . import main
-from ..requests import get_news, search_source
+from ..requests import get_news, get_source, search_source
 from ..models import News
 
 
@@ -10,10 +10,14 @@ def index():
     View root page function that returns the index page and its data
     """
     # Getting popular movie
+    news_source = get_source()
+
     popular_news = get_news()
     title = "Home - Welcome to The best Movie Review Website Online"
 
-    return render_template("index.html", title=title, popular=popular_news)
+    return render_template(
+        "index.html", title=title, popular=popular_news, source=news_source
+    )
 
 
 @main.route("/search/<source_name>")

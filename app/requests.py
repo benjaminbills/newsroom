@@ -1,6 +1,6 @@
 import urllib.request, json
 import tldextract
-from .models import News
+from .models import News, Source
 
 apiKey = None
 base_url = None
@@ -12,9 +12,22 @@ def configure_request(app):
     base_url = app.config["NEWS_API_BASE_URL"]
 
 
+def get_source():
+    get_sources_url = "https://newsapi.org/v2/sources?apiKey={}".format(apiKey)
+    with urllib.request.urlopen(get_sources_url) as url:
+        get_sources_data = url
+        get_sources_response = json.load(get_sources_data)
+        sources_result = None
+        if get_sources_response["sources"]:
+            sources_results_list = get_sources_response["sources"]
+            sources_results = process_source_results(sources_results_list)
+
+    return sources_results
+
+
 def get_news():
     get_news_url = base_url.format(apiKey)
-    print(get_news_url)
+
     with urllib.request.urlopen(get_news_url) as url:
         get_news_data = url
         get_news_response = json.load(get_news_data)
@@ -77,3 +90,30 @@ def process_results(news_list):
         news_results.append(news_object)
 
     return news_results
+
+
+def process_source_results(news_source_list):
+    """
+    Function  that processes the movie result and transform them to a list of Objects
+
+    Args:
+        movie_list: A list of dictionaries that contain movie details
+
+    Returns :
+        movie_results: A list of movie objects
+    """
+    source_results = []
+    for news_item in news_source_list:
+        id = news_item.get("id")
+        name = news_item.get("name")
+        category = news_item.get("category")
+        language = news_item.get("language")
+        source_url = news_item.get("url")
+        source_url_short = tldextract.extract(source_url).registered_domain
+
+        source_object = Source(
+            id, name, category, language, source_url, source_url_short
+        )
+        source_results.append(source_object)
+
+    return source_results
