@@ -75,19 +75,24 @@ def process_results(news_list):
         description = news_item.get("description")
         content = news_item.get("content")
         source_name = news_item.get("source")
+        urlToImage = news_item.get("urlToImage")
+        publishedAt = news_item.get("publishedAt")
         source_url = news_item.get("url")
         source_url_short = tldextract.extract(source_url).registered_domain
+        if urlToImage:
 
-        news_object = News(
-            author,
-            title,
-            description,
-            content,
-            source_name,
-            source_url,
-            source_url_short,
-        )
-        news_results.append(news_object)
+            news_object = News(
+                author,
+                title,
+                description,
+                content,
+                source_name,
+                urlToImage,
+                publishedAt,
+                source_url,
+                source_url_short,
+            )
+            news_results.append(news_object)
 
     return news_results
 
