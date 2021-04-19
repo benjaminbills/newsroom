@@ -4,7 +4,6 @@ import os
 class Config:
     """
     General configuration parent class
-    https://newsapi.org/v2/top-headlines?country=us&apiKey=2522d527060649288fbaeaa63fbb73bf
     """
 
     NEWS_API_BASE_URL = "https://newsapi.org/v2/top-headlines?country=us&apiKey={}"

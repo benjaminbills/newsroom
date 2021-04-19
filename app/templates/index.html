@@ -2,9 +2,11 @@
 {% import 'macros.html' as macro%}
 
 {% block content %}
-
+<ul>
+  {{ macro.displaySources(popular)}}
+</ul>
 <!-- Popular movie -->
-<h3> Popular Newss</h3>
+<h3 class="text-center"> Top Headlines</h3>
 <ul>
     {{ macro.displayNewsList(popular)}}
 </ul>

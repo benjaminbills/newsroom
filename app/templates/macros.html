@@ -7,8 +7,16 @@
                 <a >
                     {{ news.title|truncate(10)}}</a>
             </li>
+            <p>{{news.source_name.name}}</p>
         </div>
 
     {% endfor %}
 
+{% endmacro %}
+
+<!-- Displaying Sources macro -->
+{% macro displaySources(news_list) %}
+    {% for news in news_list %}
+    <button> <a href="/search/{{news.source_url_short}}">{{news.source_name.name}}</a> </button>
+    {% endfor %}
 {% endmacro %}
