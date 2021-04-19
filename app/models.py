@@ -10,6 +10,8 @@ class News:
         description,
         content,
         source_name,
+        urlToImage,
+        publishedAt,
         source_url,
         source_url_short,
     ):
@@ -18,6 +20,8 @@ class News:
         self.description = description
         self.content = content
         self.source_name = source_name
+        self.urlToImage = urlToImage
+        self.publishedAt = publishedAt
         self.source_url = source_url
         self.source_url_short = source_url_short
 
