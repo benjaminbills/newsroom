@@ -1,0 +1,66 @@
+.navbar {
+  
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.vertical-menu {
+  top: 56px;
+  width: 200px;
+  height: 1000px;
+  overflow-y: auto;
+  position: fixed;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.headlines, .search-result {
+  padding-top: 75px;
+}
+
+
+.title {
+  margin: 0;
+  padding: 0 0 10px;
+  color: #333333;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.description {
+  color: #666666;
+  font-size: 16px;
+  line-height: 1.8em;
+  height: 0;
+  opacity: 1;
+  transition: all 0.3s cubic-bezier(0.37, 0.75, 0.61, 1.05) 0s;
+  overflow: hidden;
+}
+
+.card:hover .description {
+  height: 100px;
+}
+.meta {
+  margin: 30px 0 0;
+  color: #999999;
+}
+
+.card {
+  width: 80%;
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
+
+
