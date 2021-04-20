@@ -9,21 +9,21 @@ def index():
     """
     View root page function that returns the index page and its data
     """
-    # Getting popular movie
+    # Getting top headlines
     news_source = get_source()
 
-    popular_news = get_news()
+    top_headlines = get_news()
     title = "Home - Welcome to The best Movie Review Website Online"
 
     return render_template(
-        "index.html", title=title, popular=popular_news, source=news_source
+        "index.html", title=title, popular=top_headlines, source=news_source
     )
 
 
 @main.route("/search/<source_name>")
 def search(source_name):
     """
-    View function to display the search results
+    View function to display the search source
     """
 
     searched_news = search_source(source_name)
