@@ -13,6 +13,9 @@ def configure_request(app):
 
 
 def get_source():
+    """
+    Function that gets the source json response to our url request
+    """
     get_sources_url = "https://newsapi.org/v2/sources?language=en&apiKey={}".format(
         apiKey
     )
@@ -28,6 +31,9 @@ def get_source():
 
 
 def get_news():
+    """
+    Function that gets the news json response to our url request
+    """
     get_news_url = base_url.format(apiKey)
 
     with urllib.request.urlopen(get_news_url) as url:
@@ -61,13 +67,13 @@ def search_source(source_name):
 
 def process_results(news_list):
     """
-    Function  that processes the movie result and transform them to a list of Objects
+    Function  that processes the news result and transform them to a list of Objects
 
     Args:
-        movie_list: A list of dictionaries that contain movie details
+        news_list: A list of dictionaries that contain news details
 
     Returns :
-        movie_results: A list of movie objects
+        news_results: A list of movie objects
     """
     news_results = []
     for news_item in news_list:
@@ -100,13 +106,13 @@ def process_results(news_list):
 
 def process_source_results(news_source_list):
     """
-    Function  that processes the movie result and transform them to a list of Objects
+    Function  that processes the source result and transform them to a list of Objects
 
     Args:
-        movie_list: A list of dictionaries that contain movie details
+        source_list: A list of dictionaries that contain source details
 
     Returns :
-        movie_results: A list of movie objects
+        source_results: A list of source objects
     """
     source_results = []
     for news_item in news_source_list:

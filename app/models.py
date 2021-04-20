@@ -1,6 +1,6 @@
 class News:
     """
-    Movie class to define Movie Objects
+    News class to define News Objects
     """
 
     def __init__(
@@ -27,6 +27,10 @@ class News:
 
 
 class Source:
+    """
+    Source class to define Source Objects
+    """
+
     def __init__(self, id, name, category, language, source_url, source_url_short):
         self.id = id
         self.name = name
