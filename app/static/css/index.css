@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Limelight&family=Montserrat:wght@300&display=swap');
 .navbar {
   
   background-color: #333;
@@ -6,10 +7,15 @@
   width: 100%;
   z-index: 2;
 }
+.navbar-brand {
+  font-family: 'Dancing Script', cursive;
+  font-size: 25px;
+}
 .vertical-menu {
   top: 56px;
   max-width: 150px;
   height: 1000px;
+  font-family: 'Montserrat', sans-serif;
   overflow-y: auto;
   position: fixed;
   z-index: 1;
@@ -53,6 +59,7 @@
 
 .news {
   z-index: 0;
+  font-family: 'Montserrat';
 }
 
 .card {
@@ -63,11 +70,12 @@
 }
 
 .card:hover .description {
+  margin-bottom: 4px;
   height: 130px;
 }
 
 @media screen and (max-width:480px) {
   .card:hover .description {
-    height: 200px;
+    height: 250px;
   }
 }
