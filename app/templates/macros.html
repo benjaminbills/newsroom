@@ -1,18 +1,18 @@
 {% macro displayNewsList(news_list) %}
 
     {% for news in news_list %}
-        
+        <div class="news">
           <div class="container">
             <div class="card justify-content-center" >
               <img src="{{news.urlToImage}}" alt="{{news.title}}">
               <div class="card-body">
                 <h5 class="card-title title">{{news.title}}</h5>
-                <p class="card-text description">{{news.description}}</p>
-                <a href="{{news.source_url}}" class="btn btn-primary">Read more</a>
+                <p class="card-text description">{{news.description | truncate(140)}}</p>
+                <a href="{{news.source_url}}" class="btn btn-dark">Read more</a>
               </div>
             </div>
           </div>
-
+        </div>
     {% endfor %}
 
 {% endmacro %}

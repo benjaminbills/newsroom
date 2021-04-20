@@ -4,13 +4,15 @@
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 2;
 }
 .vertical-menu {
   top: 56px;
-  width: 200px;
+  max-width: 150px;
   height: 1000px;
   overflow-y: auto;
   position: fixed;
+  z-index: 1;
 }
 
 .vertical-menu a {
@@ -27,6 +29,7 @@
 
 .headlines, .search-result {
   padding-top: 75px;
+  
 }
 
 
@@ -48,12 +51,8 @@
   overflow: hidden;
 }
 
-.card:hover .description {
-  height: 100px;
-}
-.meta {
-  margin: 30px 0 0;
-  color: #999999;
+.news {
+  z-index: 0;
 }
 
 .card {
@@ -63,4 +62,12 @@
   margin-bottom: 10px; /* Added */
 }
 
+.card:hover .description {
+  height: 130px;
+}
 
+@media screen and (max-width:480px) {
+  .card:hover .description {
+    height: 200px;
+  }
+}
