@@ -12,6 +12,7 @@ class News:
         source_name,
         urlToImage,
         publishedAt,
+        publishedTime,
         source_url,
         source_url_short,
     ):
@@ -22,6 +23,7 @@ class News:
         self.source_name = source_name
         self.urlToImage = urlToImage
         self.publishedAt = publishedAt
+        self.publishedTime = publishedTime
         self.source_url = source_url
         self.source_url_short = source_url_short
 

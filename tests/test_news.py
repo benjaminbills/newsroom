@@ -18,7 +18,8 @@ class NewsTest(unittest.TestCase):
             "An armed suspect jumped out of a moving vehicle he",
             "Minneapolis Star Tribune",
             "https://chorus.stimg.co/22453333/08_1012871938_05burn041921.jpg?h=630&w=1200&fit=crop&bg=999&crop=faces",
-            '2021-04-19T00:11:15Z"',
+            '2021-04-19',
+            '00:11',
             "https://www.startribune.com/burnsville-police-exchange-gunfire-with-carjacking-suspect-who-was-killed/600047474/",
             "www.startribune.com",
         )

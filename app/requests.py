@@ -84,6 +84,7 @@ def process_results(news_list):
         source_name = news_item.get("source")
         urlToImage = news_item.get("urlToImage")
         publishedAt = news_item.get("publishedAt")[:10]
+        publishedTime = news_item.get("publishedAt")[12:16]
         source_url = news_item.get("url")
         source_url_short = tldextract.extract(source_url).registered_domain
         if urlToImage:
@@ -96,6 +97,7 @@ def process_results(news_list):
                 source_name,
                 urlToImage,
                 publishedAt,
+                publishedTime,
                 source_url,
                 source_url_short,
             )
