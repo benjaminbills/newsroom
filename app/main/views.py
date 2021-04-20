@@ -27,6 +27,10 @@ def search(source_name):
     """
 
     searched_news = search_source(source_name)
+    if searched_news:
 
-    title = f"News from {source_name}"
-    return render_template("source.html", news_source=searched_news, title=title)
+        title = f"News from {source_name}"
+        return render_template("source.html", news_source=searched_news, title=title)
+    else:
+        title = f"News from {source_name}"
+        return render_template("no_news.html", title=title)
