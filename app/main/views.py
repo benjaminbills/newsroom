@@ -16,7 +16,7 @@ def index():
     title = "Home - Welcome to The best Movie Review Website Online"
 
     return render_template(
-        "index.html", title=title, popular=top_headlines, source=news_source
+        "index.html", title=title, top_headlines=top_headlines, source=news_source
     )
 
 
