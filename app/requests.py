@@ -13,7 +13,9 @@ def configure_request(app):
 
 
 def get_source():
-    get_sources_url = "https://newsapi.org/v2/sources?apiKey={}".format(apiKey)
+    get_sources_url = "https://newsapi.org/v2/sources?language=en&apiKey={}".format(
+        apiKey
+    )
     with urllib.request.urlopen(get_sources_url) as url:
         get_sources_data = url
         get_sources_response = json.load(get_sources_data)
@@ -44,7 +46,6 @@ def search_source(source_name):
     search_news_source_url = "https://newsapi.org/v2/everything?domains={}&sortBy=popularity&apiKey={}".format(
         source_name, apiKey
     )
-
     with urllib.request.urlopen(search_news_source_url) as url:
         search_news_data = url.read()
         search_news_response = json.loads(search_news_data)
